@@ -1,0 +1,108 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>net8.0-windows</TargetFramework>
+    <Nullable>enable</Nullable>
+    <UseWindowsForms>true</UseWindowsForms>
+    <ImplicitUsings>enable</ImplicitUsings>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Remove="src\GU I\**" />
+    <Compile Remove="src\GUI\demo\**" />
+    <EmbeddedResource Remove="src\GU I\**" />
+    <EmbeddedResource Remove="src\GUI\demo\**" />
+    <None Remove="src\GU I\**" />
+    <None Remove="src\GUI\demo\**" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Compile Remove="src\GUI\Components\RJComboBox.cs" />
+    <Compile Remove="src\Utils\DatabaseLockHelper.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Remove="src\assets\APIGgSheet\credentials.json" />
+    <None Remove="src\assets\database\Mydata.db" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Include="src\assets\APIGgSheet\credentials.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="src\assets\database\Mydata.db">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+
+  <ItemGroup>
+    <EditorConfigFiles Include="src\GUI\Components\RJComboBox.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="ClosedXML" Version="0.105.0" />
+    <PackageReference Include="CsvHelper" Version="33.1.0" />
+    <PackageReference Include="Google.Apis.Gmail.v1" Version="1.70.0.3833" />
+    <PackageReference Include="Krypton.Toolkit" Version="95.25.10.293" />
+    <PackageReference Include="Google.Apis" Version="1.72.0" />
+    <PackageReference Include="Google.Apis.Auth" Version="1.72.0" />
+    <PackageReference Include="Google.Apis.Sheets.v4" Version="1.70.0.3819" />
+    <PackageReference Include="MailKit" Version="4.14.1" />
+    <PackageReference Include="MimeKit" Version="4.14.0" />
+    <PackageReference Include="QuestPDF" Version="2025.7.3" />
+    <PackageReference Include="ReaLTaiizor" Version="3.8.1.3" />
+    <PackageReference Include="SkiaSharp" Version="3.119.1" />
+    <PackageReference Include="System.Data.SQLite.Core" Version="1.0.119" />
+    <PackageReference Include="WinForms.DataVisualization" Version="1.10.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Compile Update="Properties\Resources.Designer.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Update="src\assets\Image\Resource.Designer.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resource.resx</DependentUpon>
+    </Compile>
+    <Compile Update="src\assets\img\Resource1.Designer.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resource1.resx</DependentUpon>
+    </Compile>
+    <Compile Update="src\GUI\ChildPackageForm\AddPackageForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="src\Settings.Designer.cs">
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+    </Compile>
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Update="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Update="src\assets\Image\Resource.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resource.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Update="src\assets\img\Resource1.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resource1.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Update="src\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+
+</Project>
